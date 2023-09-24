@@ -1,0 +1,30 @@
+<mvc:View
+    controllerName="custom.deliveryorder.deliveryorder.controller.Index"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="索引（2）"
+    >
+        <content>
+            <l:VerticalLayout
+                class="sapUiContentPadding"
+                width="100%"
+            >
+                <l:content>
+                    <Link
+                        text="1. 价格（1）"
+                        href="#price"
+                    />
+                    <Link
+                        text="2. 送货单（1）"
+                        href="#orders"
+                    />
+                </l:content>
+            </l:VerticalLayout>
+        </content>
+    </Page>
+</mvc:View>

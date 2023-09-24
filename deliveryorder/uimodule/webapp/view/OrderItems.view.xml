@@ -1,0 +1,87 @@
+<mvc:View
+    controllerName="custom.deliveryorder.deliveryorder.controller.OrderItems"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:form="sap.ui.layout.form"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title} {data>/DeliveryOrders/0/orderNo}"
+        class="sapUiResponsiveContentPadding"
+        showNavButton="true"
+        navButtonPress=".onNavBack"
+    >
+        <content>
+            <form:SimpleForm>
+                <Label
+                    text="总金额"
+                    showColon="true"
+                    labelFor="totalAmountText"
+                />
+                <Text
+                    id="totalAmountText"
+                    text="{data>/DeliveryOrders/0/totalAmount}"
+                />
+                <Label
+                    text="总重量"
+                    showColon="true"
+                    labelFor="totalQuantityText"
+                />
+                <Text
+                    id="totalQuantityText"
+                    text="{data>/DeliveryOrders/0/totalQuantity}"
+                />
+            </form:SimpleForm>
+            <Table
+                items="{
+                  path: 'data>/OrderItems'
+                }"
+            >
+                <columns>
+                    <Column
+                        width="4em"
+                        hAlign="End"
+                    >
+                        <Text text="编号" />
+                    </Column>
+                    <Column width="18em">
+                        <Text text="型号" />
+                    </Column>
+                    <Column>
+                        <Text text="单价（元）" />
+                    </Column>
+                    <Column>
+                        <Text text="数量（吨）" />
+                    </Column>
+                    <Column hAlign="End">
+                        <Text text="金额（元）" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem vAlign="Middle">
+                        <cells>
+                            <Text text="{data>num}" />
+                            <Input
+                                value="{data>name}"
+                                showValueHelp="true"
+                            />
+                            <Input
+                                value="{data>_price}"
+                                description="元"
+                            />
+                            <Input
+                                value="{data>quantity}"
+                                description="吨"
+                            />
+                            <ObjectNumber
+                                number="{data>_amount}"
+                                unit="元"
+                            />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

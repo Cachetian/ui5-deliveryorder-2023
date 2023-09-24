@@ -1,0 +1,63 @@
+<mvc:View
+    controllerName="custom.deliveryorder.deliveryorder.controller.DeliveryOrders"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+        class="sapUiResponsiveContentPadding"
+        showNavButton="true"
+        navButtonPress=".onNavBack"
+    >
+        <content>
+            <Table
+                items="{
+              path: 'data>/DeliveryOrders'
+            }"
+            >
+                <columns>
+                    <Column
+                        width="4em"
+                        hAlign="End"
+                    >
+                        <Text text="编号" />
+                    </Column>
+                    <Column>
+                        <Text text="订单号" />
+                    </Column>
+                    <Column>
+                        <Text text="总数量（吨）" />
+                    </Column>
+                    <Column hAlign="End">
+                        <Text text="总金额（元）" />
+                    </Column>
+                    <Column>
+                        <Text text="" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem vAlign="Middle">
+                        <cells>
+                            <Text text="{data>_num}" />
+                            <Input value="{data>orderNo}" />
+                            <ObjectNumber
+                                number="{data>totalQuantity}"
+                                unit="吨"
+                            />
+                            <ObjectNumber
+                                number="{data>totalAmount}"
+                                unit="元"
+                            />
+                            <Link
+                                text="#0（1）"
+                                href="#orders/0/items"
+                            />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

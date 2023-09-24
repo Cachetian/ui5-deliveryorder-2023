@@ -1,0 +1,140 @@
+{
+  "_version": "1.42.0",
+  "sap.app": {
+    "id": "custom.deliveryorder.deliveryorder",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap-ux/fiori-freestyle-writer:basic",
+      "version": "0.14.9"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.102.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "custom.deliveryorder.deliveryorder.i18n.i18n"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "custom.deliveryorder.deliveryorder.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false
+      },
+      "routes": [
+        {
+          "name": "appHome",
+          "pattern": ":?query:",
+          "target": [
+            "IndexTarget"
+          ]
+        },
+        {
+          "name": "DeliveryOrders",
+          "pattern": "orders:?query:",
+          "target": [
+            "DeliveryOrdersTarget"
+          ]
+        },
+        {
+          "name": "OrderItems",
+          "pattern": "orders/{id}/items:?query:",
+          "target": [
+            "OrderItemsTarget"
+          ]
+        },
+        {
+          "name": "ProductPrices",
+          "pattern": "price:?query:",
+          "target": [
+            "ProductPricesTarget"
+          ]
+        }
+      ],
+      "targets": {
+        "IndexTarget": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Index",
+          "viewName": "Index"
+        },
+        "DeliveryOrdersTarget": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "DeliveryOrders",
+          "viewName": "DeliveryOrders"
+        },
+        "OrderItemsTarget": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "OrderItems",
+          "viewName": "OrderItems"
+        },
+        "ProductPricesTarget": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "ProductPrices",
+          "viewName": "ProductPrices"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "custom.deliveryorder.deliveryorder.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "ProductPrices": [
+    {
+      "name": "牛卡",
+      "price": 1000
+    }
+  ],
+  "DeliveryOrders": [
+    {
+      "orderNo": "0",
+      "totalQuantity": 1,
+      "totalAmount": 1000
+    }
+  ],
+  "OrderItems": [
+    {
+      "orderNo": "0",
+      "num": 0,
+      "name": "牛卡",
+      "quantity": 1,
+      "_price": 1000,
+      "_amount": 1000
+    }
+  ]
+}

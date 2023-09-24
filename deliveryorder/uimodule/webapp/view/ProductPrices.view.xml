@@ -1,0 +1,49 @@
+<mvc:View
+    controllerName="custom.deliveryorder.deliveryorder.controller.ProductPrices"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="价格"
+        class="sapUiResponsiveContentPadding"
+        showNavButton="true"
+        navButtonPress=".onNavBack"
+    >
+        <content>
+            <Table
+                items="{
+                  path: 'data>/ProductPrices'
+                }"
+            >
+                <columns>
+                    <Column
+                        width="4em"
+                        hAlign="End"
+                    >
+                        <Text text="编号" />
+                    </Column>
+                    <Column width="20em">
+                        <Text text="型号" />
+                    </Column>
+                    <Column width="10em">
+                        <Text text="单价（元）" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem vAlign="Middle">
+                        <cells>
+                            <Text text="{data>_num}" />
+                            <Input value="{data>name}" />
+                            <Input
+                                value="{data>price}"
+                                description="元"
+                            />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

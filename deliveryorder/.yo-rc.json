@@ -1,0 +1,23 @@
+{
+  "generator-template-ui5-project": {
+    "projectname": "deliveryorder",
+    "namespaceUI5": "custom.deliveryorder",
+    "enableFPM": false,
+    "platform": "Static webserver",
+    "viewtype": "XML",
+    "ui5libs": "Content delivery network (OpenUI5)",
+    "newdir": false,
+    "initrepo": false,
+    "namespaceURI": "custom/deliveryorder",
+    "uimodules": [
+      "uimodule"
+    ],
+    "opa5Journeys": [
+      "Main"
+    ],
+    "opa5pos": [
+      "Main"
+    ],
+    "setupCompleted": true
+  }
+}
